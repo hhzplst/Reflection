@@ -63,6 +63,15 @@ public class Reflection {
     Annotation[] annotations = type.getAnnotations();
     for(Annotation a : annotations)
       System.out.println(a);
-    System.out.println();  
+    System.out.println();
+
+    System.out.println("Getting the constructors and use the Constructor to create a new instance...");
+    ConcreteClass c = null;
+    try{
+      c = (ConcreteClass)constructors[0].newInstance(10);      
+    } catch (Exception e) {
+      System.err.println(e);
+    }
+    System.out.println("New instance created with integer " + c.publicInt); 
   }
 }

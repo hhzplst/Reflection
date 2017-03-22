@@ -26,6 +26,9 @@ public class Reflection {
     classes = type.getDeclaredClasses(); 
     for(Class<?> c : classes)
       System.out.println(c);
-    System.out.println();   
+    System.out.println(); 
+
+    System.out.println("Getting the class modifier...");
+    System.out.println(type.getModifiers());  
   }
 }

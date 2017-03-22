@@ -1,3 +1,5 @@
+import java.lang.reflect.*;
+
 public class Reflection {
   public static void main(String[] args) {
     System.out.println("Getting the canonical name of the class...");
@@ -36,6 +38,24 @@ public class Reflection {
     classes = type.getInterfaces();
     for(Class<?> c : classes)
       System.out.println(c.getCanonicalName());
+    System.out.println();
+
+    System.out.println("Getting the public methods...");
+    Method[] methods = type.getMethods();
+    for(Method m : methods)
+      System.out.println(m);
+    System.out.println(); 
+
+    System.out.println("Getting the public constructors...");
+    Constructor<?>[] constructors = type.getConstructors();
+    for(Constructor<?> c : constructors)
+      System.out.println(c);
+    System.out.println();
+
+    System.out.println("Getting the public fields...");
+    Field[] fields = type.getFields();
+    for(Field f : fields)
+      System.out.println(f);
     System.out.println();  
   }
 }

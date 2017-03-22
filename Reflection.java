@@ -21,6 +21,11 @@ public class Reflection {
       System.out.println(c);
     System.out.println();
 
-        
+    System.out.println("Getting all the classes and interfaces declared" + 
+                        "as memebers of the class(not inherited)...");
+    classes = type.getDeclaredClasses(); 
+    for(Class<?> c : classes)
+      System.out.println(c);
+    System.out.println();   
   }
 }

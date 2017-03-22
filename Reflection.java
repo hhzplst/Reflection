@@ -29,6 +29,13 @@ public class Reflection {
     System.out.println(); 
 
     System.out.println("Getting the class modifier...");
-    System.out.println(type.getModifiers());  
+    System.out.println(type.getModifiers());
+    System.out.println(); 
+
+    System.out.println("Getting the implemented interface...");
+    classes = type.getInterfaces();
+    for(Class<?> c : classes)
+      System.out.println(c.getCanonicalName());
+    System.out.println();  
   }
 }

@@ -1,3 +1,4 @@
+import java.lang.annotation.*;
 import java.lang.reflect.*;
 
 public class Reflection {
@@ -56,6 +57,12 @@ public class Reflection {
     Field[] fields = type.getFields();
     for(Field f : fields)
       System.out.println(f);
+    System.out.println(); 
+
+    System.out.println("Getting the class annotations...");
+    Annotation[] annotations = type.getAnnotations();
+    for(Annotation a : annotations)
+      System.out.println(a);
     System.out.println();  
   }
 }
